@@ -1,0 +1,78 @@
+
+Q1. Explain the concept of R-squared in linear regression models. How is it calculated, and what does it represent?
+Ans: R-square determines how well dependent and independent features are related to each other. It shows how well the data fits the regression model.
+Formula for R-square: 1-(SSres/SStotal) or 1-((yi-yi^)^2/(yi-yi')^2)
+SSres- Sum of squared residuals
+SStotal- Sum of squared totals
+
+Q2. Define adjusted R-squared and explain how it differs from the regular R-squared.
+Ans: Adjusted R-squared is a modified version of R-squared. It takes number of independent features in the account also. The main difference between both the methods is r-squared will increase if we add more independent features in it even if they are less related to output feature. Whereas in adjusted r-squared, it will only increase if we add the features which are significantly related with output feature. Its value will always be less than r-squared.
+
+Q3. When is it more appropriate to use adjusted R-squared?
+Ans: It is more appropriate when you are comparing models with different number of independent variables. It is because when we add features which are not much related or do not improve the fit, then adjusted R-squared value dosen't increase. This will give more accurate results in terms of fit of the models.
+
+Q4. What are RMSE, MSE, and MAE in the context of regression analysis? How are these metrics calculated, and what do they represent?
+
+MSE(Mean squared error): It is the average of squared errors between predicted values and actual values. It is calculated as: *(sum(errors^2))/n* n=no.of data points,errors=difference between predicted values and actual values.
+
+RMSE(Root mean squared error): It is the square root of MSE. It is the measure of average error between predicted values and actual values. It is calculated as: *sqrt(MSE)*.
+
+MAE(Mean absolute error): It is the average of absolute errors between predicted values and actual values. It is the measure of average magnitude of the error: It is calculated as: *(sum(|errors|))/n*.
+
+The lower these values are, the better the model is.
+
+Q5. Discuss the advantages and disadvantages of using RMSE, MSE, and MAE as evaluation metrics in regression analysis.
+
+RMSE:
+Advantages
+It is differentiable
+It is a unit-less metric, so it can be compared across models with different dependent variables
+Disadvantages
+More sensitive to outliers
+MSE:
+Advantages
+It is differentiable
+It is a unit-less metric, so it can be compared across models with different dependent variables
+Disadvantages
+More sensitive to outliers
+Difficult to understand the meaning of low or high MSE
+MAE:
+Advantages
+Less sensitive to outliers
+It has a same unit
+Disadvantages
+It takes more calculation time
+Q6. Explain the concept of Lasso regularization. How does it differ from Ridge regularization, and when is it more appropriate to use?
+Ans: Lasso regularization is used to reduce overfitting in a regression model by penalizing the coefficients. The penalty is proportional to the absolute value of slope or coefficients. So coefficients with small values are more likely to be shrink to zero.
+
+
+The main difference between Ridge regularization and Lasso regularization is that Lasso regularization can be used for feature selection by eliminating the least important features while Ridge regularization can't.
+
+
+Ridge regularization is appropriate when we want to reduce the variance of model without caring about feature selection while Lasso regularization is used in feature selection also.
+
+Q7. How do regularized linear models help to prevent overfitting in machine learning? Provide an example to illustrate.
+Ans: Regularized linear model helps to prevent overfitting in machine learning model by adding a penalty to the model's coefficient. The penalty discourages the model from becoming to complex, which can help to prevent it from fitting the data too closely.
+
+
+For example, let's say we have a linear regression model which helps in predicting the price of the house based on its size. If the model is not regularized, it may learn to fit the training data properly, even if the training data contains some outliers. This would cause the model to overfit and it would not be able to generalize well to the new data.
+
+Q8. Discuss the limitations of regularized linear models and explain why they may not always be the best choice for regression analysis.
+Ans: Regulaized linear models are a powerful tool to prevent overfitting in machine learning models, but they have some limitations:
+
+They can reduce the model's accuracy: When a regularized linear model is shrunk too much, it can loose some of its predictive power because it is forced to fit the training data less closely.
+They can be computationall expensive: The process of regularizing the linear model can be computationall expensive, especially for large datasets. This is because the model has to optimized multiple times, each time with a different value of regularizing parameter.
+They can be difficult to interpret: The coefficients of regularized linear are often shrunk toward zero, which can make it difficult to intrepret the model. This is because the coefficients represents the inportance of each feature and if they all are shrunk towards zero, it will be difficult to identify the important features.
+For these reasons, the regularized linear models may not be the best choice for regression analysis. If accuracy is a concern, they regularized model may not be the best choice but if overfitting is a concern, then they are the good choice.
+
+Q9. You are comparing the performance of two regression models using different evaluation metrics. Model A has an RMSE of 10, while Model B has an MAE of 8. Which model would you choose as the better performer, and why? Are there any limitations to your choice of metric?
+Model A's RMSE of 10 indicates that the average difference between actual values and predicted values is 10 while model B's MAE of 8 indicates that the average absolute difference between actual and predicticted values is 8 units.
+Without any information about the data, outliers and skewness
+
+Q10. You are comparing the performance of two regularized linear models using different types of regularization. Model A uses Ridge regularization with a regularization parameter of 0.1, while Model B uses Lasso regularization with a regularization parameter of 0.5. Which model would you choose as the better performer, and why? Are there any trade-offs or limitations to your choice of regularization method?
+Ans: Without any information about the data, when the coefficients are large I will choose Model A while Model B when coefficients are small
+
+ 
+ 
+ 
+ 
